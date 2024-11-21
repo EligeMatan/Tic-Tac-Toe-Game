@@ -3,8 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <title>Tic-Tac-Toe Game</title>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+
         <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="action.js"></script>
     </head>
     <body>
         <div class="drag">
@@ -26,15 +32,17 @@
         </div>
 
         <div class="board">
-            <div class="dragBox"></div>
-            <div class="dragBox"></div>
-            <div class="dragBox"></div>
-            <div class="dragBox"></div>
-            <div class="dragBox"></div>
-            <div class="dragBox"></div>
-            <div class="dragBox"></div>
-            <div class="dragBox"></div>
-            <div class="dragBox"></div>
+            <div class="dropBox"></div>
+            <div class="dropBox"></div>
+            <div class="dropBox"></div>
+
+            <div class="dropBox"></div>
+            <div class="dropBox"></div>
+            <div class="dropBox"></div>
+            
+            <div class="dropBox"></div>
+            <div class="dropBox"></div>
+            <div class="dropBox"></div>
         </div>
 
         <div class="drag">
@@ -42,7 +50,7 @@
                 <div class="circle" draggable="true" id="circle1"></div>
             </div>
             <div class="dragBox">
-                <div class="cross" draggable="true" id="circle2"></div>
+                <div class="circle" draggable="true" id="circle2"></div>
             </div>
             <div class="dragBox">
                 <div class="circle" draggable="true" id="circle3"></div>
@@ -54,5 +62,23 @@
                 <div class="circle" draggable="true" id="circle5"></div>
             </div>
         </div>
+
+        <button class="reset">Reset Game</button>
+
+        <!--script>
+            const allowDrop = (event) => {
+                event.preventDefault();
+            }
+
+            const drag = (event) => {
+                event.dataTransfer.setData('text', event.target.id)
+            }
+
+            const drop = (event) => {
+                event.preventDefault();
+                let data = event.dataTransfer.getData('text');
+                event.target.appendChild(document.getElementById(data))
+            }
+        </script-->
     </body>
 </html>
